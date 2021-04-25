@@ -39,3 +39,8 @@ def possui_movimentos_possiveis(baralho):
         return False
     else:
         return True
+
+def empilha(baralho, o, d):
+    baralho[d]=baralho[o]
+    del(baralho[o])
+    return baralho
