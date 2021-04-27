@@ -1,3 +1,5 @@
+import random
+
 def cria_baralho():
     lista_base = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
     lista_final = []
@@ -68,11 +70,14 @@ def ascii(carta):
 
 def play():
     class colors:
-    AZUL = '\033[94m'
-    VERDE = '\033[92m'
-    AMARELO = '\033[93m'
-    VERMELHO = '\033[91m'
-    ENDC = '\033[0m'
+        AZUL = '\033[94m'
+        VERDE = '\033[92m'
+        AMARELO = '\033[93m'
+        VERMELHO = '\033[91m'
+        ENDC = '\033[0m'
+    
+    baralho = cria_baralho()
+    random.shuffle(baralho)
 
     while possui_movimentos_possiveis(baralho):
         print('O estado atual do baralho é:')
