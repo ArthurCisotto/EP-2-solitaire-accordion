@@ -27,10 +27,12 @@ def lista_movimentos_possiveis(baralho, i):
     movimentos_possiveis = []
     for e in posicoes_validas:
         if i<e:
-            break
-        if extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-e]) or extrai_valor(baralho[i]) == extrai_valor(baralho[i-e]):
-            movimentos_possiveis.append(e)
-    return movimentos_possiveis
+            continue
+        try:
+            if extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-e]) or extrai_valor(baralho[i]) == extrai_valor(baralho[i-e]):
+                movimentos_possiveis.append(e)
+        except IndexError as a:
+            pass
 
 def possui_movimentos_possiveis(baralho):
     check = 0
