@@ -31,8 +31,9 @@ def lista_movimentos_possiveis(baralho, i):
         try:
             if extrai_naipe(baralho[i]) == extrai_naipe(baralho[i-e]) or extrai_valor(baralho[i]) == extrai_valor(baralho[i-e]):
                 movimentos_possiveis.append(e)
-        except IndexError as a:
+        except IndexError:
             pass
+    return movimentos_possiveis
 
 def possui_movimentos_possiveis(baralho):
     check = 0
