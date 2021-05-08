@@ -84,15 +84,15 @@ def play():
 
     while possui_movimentos_possiveis(baralho):
         print('O estado atual do baralho é:')
-        for e in range(len(baralho)):
-            if extrai_naipe(baralho[e]) == '♠':
-                print(f'{e+1}. {colors.AZUL}{ascii(baralho[e])}{colors.ENDC}')
-            if extrai_naipe(baralho[e]) == '♥':
-                print(f'{e+1}. {colors.VERMELHO}{ascii(baralho[e])}{colors.ENDC}')
-            if extrai_naipe(baralho[e]) == '♦':
-                print(f'{e+1}. {colors.VERDE}{ascii(baralho[e])}{colors.ENDC}')
-            if extrai_naipe(baralho[e]) == '♣':
-                print(f'{e+1}. {colors.AMARELO}{ascii(baralho[e])}{colors.ENDC}')
+        for posicao, carta in enumerate(baralho, 1):
+            if extrai_naipe(carta) == ':spades:':
+                print(f'{posicao}. {colors.AZUL}{ascii(carta)}{colors.ENDC}')
+            if extrai_naipe(carta) == ':hearts:':
+                print(f'{posicao}. {colors.VERMELHO}{ascii(carta)}{colors.ENDC}')
+            if extrai_naipe(carta) == ':diamonds:':
+                print(f'{posicao}. {colors.VERDE}{ascii(carta)}{colors.ENDC}')
+            if extrai_naipe(carta) == ':clubs:':
+                print(f'{posicao}. {colors.AMARELO}{ascii(carta)}{colors.ENDC}')
         carta_escolhida = int(input(f'Escolha uma carta (digite um número entre 1 e {len(baralho)}):'))
 
         #Checar os movimentos possíveis
