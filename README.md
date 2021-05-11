@@ -14,10 +14,10 @@ Por último, fizemos alguns commits de correções de bugs e erros gerados por a
 Detalhamento das funções do jogo:
 
 1. cria_baralho: função obrigatória que gera o baralho;
-2. empilha: função obrigatória que realiza a movimentaçãon de empilhamento das cartas durante o jogo;
-3. extrai_naipe: função obrigatória que verifica o naipe da carta escolhida antes de apresentar as movimentações possíveis se existirem;
-4. extrai_valor: função obrigatória que verifica o valor da carta antes de apresentar as movimentações possíveis se existirem;
+2. empilha: função obrigatória que realiza a movimentação de empilhamento das cartas durante o jogo;
+3. extrai_naipe: função obrigatória que verifica o naipe da carta escolhida;
+4. extrai_valor: função obrigatória que verifica o valor da carta escolhida;
 5. possui_movs_possiveis: função obrigatória que verifica de a carta escolhida possui movimentos possiveis dado seu valor/naipe e seguindo as regras do jogo;
 6. movs_possiveis: função obrigatória que exibe os movimentos possíveis, se existirem,  para uma determinada carta escolhida;
-7. funcoes: função compilado das funções obrigatórias em conjunto com outros elementos que descrevem a regra do jogo e permitem sua continuidade;
+7. funcoes: arquivo compilado das funções obrigatórias em conjunto com outras funções que descrevem a regra do jogo e permitem sua continuidade;
 8. main: função que roda o jogo e permite recomeçar quando terminado; 
