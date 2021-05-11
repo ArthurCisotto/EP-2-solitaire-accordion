@@ -71,6 +71,19 @@ def ascii(carta):
     carta_final += '└─────────┘'
     return carta_final
 
+def regras():
+    print("PACIÊNCIA ACORDEÃO\n==================")
+    print("Seja bem-vindo(a) ao jogo de Paciência Acordeão! O objetivo deste jogo é colocar todas as cartas em uma mesma pilha.\n")
+    print('Existem apenas dois movimentos possíveis:\n') 
+    print("1. Empilhar uma carta sobre a carta imediatamente anterior;") 
+    print("2. Empilhar uma carta sobre a terceira carta anterior.\n") 
+    print("Para que um movimento possa ser realizado basta que uma das duas condições abaixo seja atendida:\n") 
+    print("1. As duas cartas possuem o mesmo valor ")
+    print('2. As duas cartas possuem o mesmo naipe.\n') 
+    print('Desde que alguma das condições acima seja satisfeita, qualquer carta pode ser movimentada.\n') 
+    print('Aperte [Enter] para iniciar o jogo...')
+    input()
+
 def play():
     class colors:
         AZUL = '\033[94m'
@@ -81,7 +94,8 @@ def play():
     
     baralho = cria_baralho()
     random.shuffle(baralho)
-
+    regras()
+    
     while possui_movimentos_possiveis(baralho):
         empilhou = False
         print('O estado atual do baralho é:')
@@ -101,7 +115,7 @@ def play():
                 #Checar os movimentos possíveis
                 if lista_movimentos_possiveis(baralho, carta_escolhida-1) == []:
                     print(f'A carta {baralho[carta_escolhida-1]} não pode ser movida. Por favor, digite um número entre 1 e {len(baralho)}:')
-                if lista_movimentos_possiveis(baralho, carta_escolhida-1) == [1, 3]:
+                elif lista_movimentos_possiveis(baralho, carta_escolhida-1) == [1, 3]:
                     print(f'Sobre qual carta você quer empilhar o {baralho[carta_escolhida-1]}?')
                     print(f'1. {baralho[carta_escolhida-2]}')
                     print(f'2. {baralho[carta_escolhida-4]}\n')
@@ -115,10 +129,10 @@ def play():
                             empilhou = True
                     else:
                         print("Escolha inválida")
-                if lista_movimentos_possiveis(baralho, carta_escolhida-1) == [1]:
+                elif lista_movimentos_possiveis(baralho, carta_escolhida-1) == [1]:
                     empilha(baralho, carta_escolhida-1, carta_escolhida-2)
                     empilhou = True
-                if lista_movimentos_possiveis(baralho, carta_escolhida-1) == [3]:
+                elif lista_movimentos_possiveis(baralho, carta_escolhida-1) == [3]:
                     empilha(baralho, carta_escolhida-1, carta_escolhida-4)
                     empilhou = True
             else:
